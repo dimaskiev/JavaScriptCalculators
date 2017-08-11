@@ -1,0 +1,21 @@
+@mixin headerblock {
+    font-family: $headerfont;
+    font-size: $blockheadersize;
+}
+
+@mixin sectionheader {
+    font-family: $headerfont;
+    font-size: $headersize;
+}
+
+@mixin maintext {
+    font-family: $mainfont;
+    font-size: $mainsize;
+    color: $usercolor;
+}
+
+@mixin copyright {
+    font-family: $footerfont;
+    font-size: $mainsize;
+    color: $whitecolor;
+}

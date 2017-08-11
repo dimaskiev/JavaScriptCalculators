@@ -1,0 +1,52 @@
+block variables
+
+doctype html
+html(oncontextmenu="return false;")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    meta(name="author" content="elefantSolar")
+    meta(name="description" content="Калькулятор для розрахунку вартості та окупності сонячної електростанції")
+    meta(name="keywords" content="фотоелектрика, зелений тариф, калькулятор сонячної станції, фотоелектрика")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+    //- favicon block start
+    //- favicon block end
+
+    
+    
+    link(rel='stylesheet' href='assets/css/foundation.css')
+    link(rel='stylesheet' href='assets/css/app.css')
+    
+    script(src='assets/js/foundation.js' defer)
+    script(src='assets/js/app.js' defer)
+    script(src='https://code.jquery.com/jquery-2.0.0.js' defer)
+     script(src='assets/js/jquery.mobile-1.4.5.min.js' defer)
+   
+    script(src='https://code.highcharts.com/highcharts.js' defer)
+    script(src='https://code.highcharts.com/modules/exporting.js' defer)
+     
+    script(src='assets/js/pdfmake.min.js' defer)
+    script(src='assets/js/vfs_fonts.js' defer)   
+    script(src='http://canvg.github.io/canvg/rgbcolor.js' defer)
+    script(src='http://canvg.github.io/canvg/StackBlur.js' defer)
+    script(src='http://canvg.github.io/canvg/canvg.js' defer)
+    script(src='/assets/js/html2canvas.js' defer)
+    
+
+    
+    
+    
+    <!--[if lt IE 9]>
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+    <![endif]-->
+
+  body#body
+    
+    block content
+    
+   
+    
+
+

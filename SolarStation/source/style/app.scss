@@ -1,0 +1,24 @@
+/* Переменные            */
+
+@import 'common/variables';
+
+/* Миксины             */
+
+@import 'common/mixin';
+
+/* Спрайты              */
+
+@import 'common/sprite';
+
+/* Блоки           */
+
+@import 'common/layout';
+
+/* Шрифты                */
+
+@import 'common/fonts';
+
+/* Страницы            */
+
+@import 'style/**/*';
+@import 'block/**/*';

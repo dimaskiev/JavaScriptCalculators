@@ -1,0 +1,27 @@
+ [{
+
+     "price": 142,
+     "power": 265,
+     "width": 99,
+     "height": 164,
+     "weight": 19,
+     "fixturePrice": 44,
+     "tarif": 0.98,
+     "tarif_ext": 1.68,
+     "greentarif": 0.18,
+     "cross": 1.14
+
+ }, {
+
+
+     "cable": 15,
+     "consumables": 10,
+     "transport": 15,
+     "course": 25.90
+
+ }, {
+
+     "power": [5, 10, 15, 20, 30],
+     "price": [1250, 2199, 2400, 2590, 3650]
+
+ }]

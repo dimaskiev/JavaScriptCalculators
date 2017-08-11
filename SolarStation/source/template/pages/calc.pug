@@ -1,0 +1,94 @@
+extends ../_template
+
+block variables
+  - var title = 'Розрахунок сонячної станції'
+ 
+block content
+  .wrapper
+    .content
+      section
+        .block__input
+          .block__input-solar__power
+            span.label__text.power__text-select Потужність станції
+            select#power__station.power__station-select
+              option(value="5") 5 кВт
+              option(value="10" selected) 10 кВт
+              option(value="15") 15 кВт
+              option(value="20") 20 кВт
+              option(value="30") 30 кВт
+          .block__input-angle__roof
+            span.label__text.power__text-select Кут нахилу даху
+            select#angleroof.angle__roof-select
+              - for (var i=0; i<50; i=i+5)
+                option(value=`${i}`)= i +" градусів"
+          .block__input-solar__azimuth
+            span.label__text.power__text-select Азимут
+            select#azimuth.angle__roof-select
+              - for (var i=0; i<=360; i=i+10)
+                option(value=`${i}`)= i +" градусів"
+
+        .block__output
+          .block__button-result          
+            a(href="").button__result#powerresult Розрахувати
+        div#countries
+
+
+        .block__input
+          .block__input-solar__power
+            span.label__text.power__text-select Потужність станції
+            select#power__station.power__station-select
+              option(value="5") 5 кВт
+              option(value="10" selected) 10 кВт
+              option(value="15") 15 кВт
+              option(value="20") 20 кВт
+              option(value="30") 30 кВт
+          .block__input-power__month
+            .block__month
+              .table__ceil
+                .block__month-text Січень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Лютий
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Березень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Квітень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Травень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Червень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Липень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Серпень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Вересень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Жовтень
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Листопад
+              input(type="text").table__ceil-input.table__ceil-input-power
+            .block__month
+              .table__ceil
+                .block__month-text Грудень
+              input(type="text").table__ceil-input.table__ceil-input-power
+              

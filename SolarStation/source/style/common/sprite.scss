@@ -1,0 +1,14 @@
+.social__icon {
+    fill: $whitecolor;
+    opacity: 0.5;
+    width: 30.011px;
+    height: 17.123px;
+    &:hover {
+        fill: $hovercolor;
+        cursor: pointer;
+    }
+}
+
+.social__item {
+    display: inline-flex;
+}

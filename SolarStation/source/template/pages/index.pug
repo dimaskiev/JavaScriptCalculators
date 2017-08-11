@@ -1,0 +1,259 @@
+extends ../_template
+
+block variables
+  - var title = 'ElefantSolar - Калькулятор для розрахунку сонячної станції'
+ 
+block content
+
+  
+  .wrapper
+    .content
+      section.header
+        .header__column.column__left
+          .header__logo
+            img(src="assets/img/logo.png").logo
+        .header__column.column__right
+          .header__contact
+            .contact
+              p м.Житомир, проспект Незалежності, 184, оф. 213
+              p (0412) 46-06-46, (067) 46-406-46
+              a(href="http://solar.profkomfort.com.ua") http://solar.profkomfort.com.ua
+        
+      
+      section.main#print-content
+        .img__home
+          img(class="img__main" src="assets/img/pdf_home.jpg")
+        .block__input
+          .block__input-solar__power
+            span.label__text.power__text-select Оберіть потужність станції:
+            .datapower__block 
+              label.input__data
+                <input type="radio" id="radio-1" value="05" name="datapower" class="regular-radio big-radio" checked/>
+                <label for="radio-1"></label>
+                span.power__text 5 кВт
+              label.input__data
+                <input type="radio" id="radio-2" value="10" name="datapower" class="regular-radio big-radio"/>
+                <label for="radio-2"></label>
+                span.power__text 10 кВт
+              label.input__data
+                <input type="radio" id="radio-3" value="15" name="datapower" class="regular-radio big-radio"/>
+                <label for="radio-3"></label>
+                span.power__text 15 кВт
+              label.input__data
+                <input type="radio" id="radio-4" value="20" name="datapower" class="regular-radio big-radio"/>
+                <label for="radio-4"></label>
+                span.power__text 20 кВт
+              label.input__data
+                <input type="radio" id="radio-5" value="30" name="datapower" class="regular-radio big-radio"/>
+                <label for="radio-5"></label>
+                span.power__text 30 кВт
+          .block__input-solar__power
+            span.label__text.power__text-select Кут нахилу даху
+            input(class="range" id="angle" name="angle" type="range" min="5" max="60" step="5" value="10" )
+            output(class="data__input-select" id="angleoutput" for="angle") 10
+            p градусів
+
+          .block__input-solar__power
+            span.label__text.power__text-select Азимут
+            input(class="range" id="azimuth" name="angle" type="range" min="0" max="360" step="10" value="0" )
+            output(class="data__input-select" id="azimuthoutput" for="angle") 10
+            p градусів
+
+        
+        
+          .block__input-solar__month          
+              span.label__text.solar__month-text Середнє споживання кВт в місяць
+              input(type="text")#energymonth.table__ceil-input
+          .block__buttons
+            .block__button-result          
+              a(href="" onClick="ga('send', 'event', 'button_calc', 'press', 'calculator');").button__result#powerresult Розрахувати      
+            .block__button-result.button__topdf
+              a(href="" onClick="ga('send', 'event', 'button_calc', 'press', 'topdf_top');").button__pdf.printToPdf Зберегти розрахунки в PDF
+        .block__output
+          .row
+            div#container
+          .block__info
+            h2.block__info--title Технічні характеристики системи
+            .block__info-info
+              .block__info-output
+                span.block__info-output-text Номінальна потужність інвертора
+                span.block__info-output-text#powerinverter 0
+                span.block__info-output-text кВт
+              .block__info-output
+                span.block__info-output-text Площа сонячного массиву
+                span.block__info-output-text#areabattery 0
+                span.block__info-output-text м.кв.
+              .block__info-output
+                span.block__info-output-text Вага сонячного массиву
+                span.block__info-output-text#weightbattery 0
+                span.block__info-output-text кг
+          
+          .tableblock
+            h2.block__info--title Вартість системи:
+            table.output__result-table
+              tr.result-table__row
+                td(colspan="7").result-table__ceil Система складається з 
+              tr.result-table__row
+                td(colspan="7").result-table__ceil Основного обладнання
+              tr.result-table__row
+                td.result-table__ceil.ceil__one №
+                td.result-table__ceil Назва
+                td.result-table__ceil Позначення
+                td.result-table__ceil Од.виміру
+                td.result-table__ceil ціна
+                td.result-table__ceil К-сть
+                td.result-table__ceil Сума        
+              tr.result-table__row
+                td.result-table__ceil 1
+                td.result-table__ceil Фотоелектричні панелі
+                td.result-table__ceil 265D
+                td.result-table__ceil шт
+                td.result-table__ceil 142
+                td.result-table__ceil#panels 0
+                td.result-table__ceil#panelsprice 0
+              tr.result-table__row
+                td.result-table__ceil 2
+                td.result-table__ceil Інвертор
+                td.result-table__ceil AKSG
+                td.result-table__ceil шт
+                td.result-table__ceil.invertorprice 
+                td.result-table__ceil 1
+                td.result-table__ceil.invertorprice 0
+              tr.result-table__row
+                td(colspan="6").result-table__ceil Варстіть основного обладнання
+                td.result-table__ceil.maincost 0
+              tr.result-table__row
+                td.result-table__ceil.ceil__one №
+                td.result-table__ceil Назва
+                td.result-table__ceil Позначення
+                td.result-table__ceil Од.виміру
+                td.result-table__ceil ціна
+                td.result-table__ceil К-сть
+                td.result-table__ceil Сума
+              tr.result-table__row
+                td.result-table__ceil 3
+                td.result-table__ceil Кабельно-провідникова продукція
+                td.result-table__ceil -
+                td.result-table__ceil компл.
+                td.result-table__ceil.cabelprice 0
+                td.result-table__ceil 1
+                td.result-table__ceil.cabelprice 0
+              tr.result-table__row
+                td.result-table__ceil 4
+                td.result-table__ceil Несучі конструкції ФЕП
+                td.result-table__ceil алюміній
+                td.result-table__ceil компл.
+                td.result-table__ceil.fixtureprice 0
+                td.result-table__ceil 1
+                td.result-table__ceil.fixtureprice 0
+              tr.result-table__row
+                td.result-table__ceil 5
+                td.result-table__ceil Витратні матеріали
+                td.result-table__ceil -
+                td.result-table__ceil компл.
+                td.result-table__ceil.consumables 0
+                td.result-table__ceil 1
+                td.result-table__ceil.consumables 0
+              tr.result-table__row
+                td(colspan="6").result-table__ceil Вартість додаткового обладнання
+                td.result-table__ceil.extcost
+              tr.result-table__row
+                td(colspan="6").result-table__ceil Вартість монтажних і пусконаладочних робіт
+                td.result-table__ceil#instalation 0
+              tr.result-table__row
+                td(colspan="6").result-table__ceil Транспортні витрати
+                td.result-table__ceil#pricetransport 0
+              tr.result-table__row
+                td(colspan="6").result-table__ceil Вартість проекту під ключ
+                td.result-table__ceil#summprojects 0
+        
+        .financial__block
+        h2.block__info--title Фінансові розрахунки
+          .table__block
+            table.output__result-table
+              tr.result-table__row
+                th.result-table__ceil.table__header Місяць
+                th.result-table__ceil.table__header Вироблено кВт
+                th.result-table__ceil.table__header Споживання кВт
+                th.result-table__ceil.table__header Дохід USD
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Січень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Лютий
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Березень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Квітень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Травень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Червень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Липень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Серпень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Вересень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Жовтень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Листопад
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-month Грудень
+                td.result-table__ceil.table__ceil-power 0
+                td.result-table__ceil.table__ceil-consum 0
+                td.result-table__ceil.table__ceil-financial 0
+              tr.result-table__row
+                td.result-table__ceil.table__ceil-year Всього за рік
+                td.result-table__ceil.table__ceil-power-year 0
+                td.result-table__ceil.table__ceil-consum-year 0
+                td.result-table__ceil.table__ceil-financial-year 0
+          .block__payback
+              span.payback__text Строк повернення інвестицій
+              span.payback__text#investyear 0
+              span.payback__text років
+         
+        
+
+        .block__button-result.button__topdf
+          a(href="" onClick="ga('send', 'event', 'button_calc', 'press', 'topdf_bottom');").button__pdf.printToPdf Зберегти розрахунки в PDF
+        
+
+            
+    footer.footer
+      .footer__info
+        a(href="http://solar.profkomfort.com.ua").footer__link http://solar.profkomfort.com.ua
+  
