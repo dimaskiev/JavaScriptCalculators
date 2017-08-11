@@ -8,7 +8,7 @@
 
 1. Калькулятор для рассчета солнечной станции
 
- > https://github.com/dimaskiev/JavaScriptCalculators/SolarStation
+ > https://github.com/dimaskiev/JavaScriptCalculators/tree/master/SolarStation
 
  > Рабочий вариант http://solar.profkomfort.com.ua
    
