@@ -58,8 +58,17 @@ block content
             input(class="range" id="azimuth" name="angle" type="range" min="0" max="360" step="10" value="0" )
             output(class="data__input-select" id="azimuthoutput" for="angle") 10
             p градусів
-
-        
+          .block__input-solar__power
+            span.label__text.power__text-select.center--text За посиланнями программи для визначення азимуту
+          .block__compass.block__input-solar__power
+            
+            div.compass__column
+              a(href="https://play.google.com/store/search?q=compass&c=apps" class="compass__link" target="_blank")            
+                img(src="assets/img/playlogo.png", alt="" class="compass__image")
+            div.compass__column
+              a(href="https://itunes.apple.com/us/app/compass-free/id284735786?mt=8" class="compass__link" target="_blank")            
+                img(src="assets/img/applogo.png", alt=""  class="compass__image")
+                                            
         
           .block__input-solar__month          
               span.label__text.solar__month-text Середнє споживання кВт в місяць

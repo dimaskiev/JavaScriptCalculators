@@ -124,3 +124,42 @@
         border-radius: 0;
     }
 }
+
+.block__compass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.compass__column {
+    flex: 1;
+    align-items: center;
+}
+
+.compass__image {
+    width: 75%;
+    max-width: 220px;
+    max-height: 100px;
+}
+
+.compass__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    max-height: 100px;
+}
+
+@media all and (max-width: 480px) {
+    .block__compass {
+        flex-direction: column;
+    }
+    .compass__column {
+        margin-bottom: 25px;
+    }
+}
+
+.center--text {
+    text-align: center;
+}

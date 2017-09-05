@@ -497,7 +497,7 @@ $(document).ready(function() {
             batterySolar = getDataPrice(0), // Данные батареи
             additional = getDataPrice(1), // Данные дополнительно
             inverter = getDataPrice(2), //Данные инвертора
-            panels = Math.ceil(powerDataInput * 4), // К-во панелей
+            panels = Math.ceil((powerDataInput * 1000) / batterySolar.power), // К-во панелей
             //powerMassiv = panels * powerDataInput, // Мощность солнечного массива
             priceBattery = batterySolar.price, // МАССИВ Стоимость батарей 
             weightBattery = panels * batterySolar.weight, // Вес солнечного массива
