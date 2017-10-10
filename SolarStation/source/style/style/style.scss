@@ -133,7 +133,7 @@
 }
 
 .compass__column {
-    flex: 1;
+   /* flex: 1;*/
     align-items: center;
 }
 
@@ -162,4 +162,9 @@
 
 .center--text {
     text-align: center;
+}
+
+.chartblock{
+    overflow: auto;
+    // min-width: 850px;
 }
